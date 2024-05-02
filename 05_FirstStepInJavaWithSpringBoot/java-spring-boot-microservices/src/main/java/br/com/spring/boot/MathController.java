@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.spring.boot.converters.AdapterNumeric;
-import br.com.spring.boot.exceptions.UnsuportedMathOperationException;
+import br.com.spring.boot.exceptions.ResourceNotFoundException;
 import br.com.spring.boot.operations.math.Addition;
 import br.com.spring.boot.operations.math.Division;
 import br.com.spring.boot.operations.math.Mean;
@@ -24,7 +24,7 @@ public class MathController {
 		
 		AdapterNumeric adapterNumeric = new AdapterNumeric();
 		if(!adapterNumeric.isNumeric(numberOne) || !adapterNumeric.isNumeric(numberTwo) ) { 
-			throw new UnsuportedMathOperationException("Please, set a numeric value");
+			throw new ResourceNotFoundException("Please, set a numeric value");
 		}
 		
 		Addition addition = new Addition();
@@ -36,7 +36,7 @@ public class MathController {
 		
 		AdapterNumeric adapterNumeric = new AdapterNumeric();
 		if(!adapterNumeric.isNumeric(numberOne) || !adapterNumeric.isNumeric(numberTwo) ) { 
-			throw new UnsuportedMathOperationException("Please, set a numeric value");
+			throw new ResourceNotFoundException("Please, set a numeric value");
 		}
 		
 		Subtraction subtration = new Subtraction();
@@ -50,7 +50,7 @@ public class MathController {
 		
 		AdapterNumeric adapterNumeric = new AdapterNumeric();
 		if(!adapterNumeric.isNumeric(numberOne) || !adapterNumeric.isNumeric(numberTwo) ) { 
-			throw new UnsuportedMathOperationException("Please, set a numeric value");
+			throw new ResourceNotFoundException("Please, set a numeric value");
 		}
 		
 		Division division = new Division();
@@ -62,7 +62,7 @@ public class MathController {
 		
 		AdapterNumeric adapterNumeric = new AdapterNumeric();
 		if(!adapterNumeric.isNumeric(numberOne) || !adapterNumeric.isNumeric(numberTwo) ) { 
-			throw new UnsuportedMathOperationException("Please, set a numeric value");
+			throw new ResourceNotFoundException("Please, set a numeric value");
 		}
 		
 		Multiplication multiplication = new Multiplication();
@@ -74,7 +74,7 @@ public class MathController {
 		
 		AdapterNumeric adapterNumeric = new AdapterNumeric();
 		if(!adapterNumeric.isNumeric(numberOne) || !adapterNumeric.isNumeric(numberTwo) ) { 
-			throw new UnsuportedMathOperationException("Please, set a numeric value");
+			throw new ResourceNotFoundException("Please, set a numeric value");
 		}
 		
 		Mean mean = new Mean();
@@ -86,7 +86,7 @@ public class MathController {
 		
 		AdapterNumeric adapterNumeric = new AdapterNumeric();
 		if(!adapterNumeric.isNumeric(number)) { 
-			throw new UnsuportedMathOperationException("Please, set a numeric value");
+			throw new ResourceNotFoundException("Please, set a numeric value");
 		}
 		
 		SquareRoot squareRoot = new SquareRoot();

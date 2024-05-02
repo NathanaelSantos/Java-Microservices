@@ -1,7 +1,7 @@
 package br.com.spring.boot.operations.math;
 
 import br.com.spring.boot.converters.ConvertToDouble;
-import br.com.spring.boot.exceptions.UnsuportedMathOperationException;
+import br.com.spring.boot.exceptions.ResourceNotFoundException;
 
 public class Division {
 	public Double division(String numberOne, String numberTwo) {
@@ -10,7 +10,7 @@ public class Division {
 		Double valueTwo = convertToDouble.convertToDouble(numberTwo);
 		
 		if(valueTwo == 0.0) {
-			throw new UnsuportedMathOperationException("It is not possible to divide by zero");
+			throw new ResourceNotFoundException("It is not possible to divide by zero");
 		} else {
 			return convertToDouble.convertToDouble(numberOne) / convertToDouble.convertToDouble(numberTwo);
 		}
